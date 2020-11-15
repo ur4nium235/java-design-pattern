@@ -22,6 +22,15 @@ public class App {
     public static void main(String[] args) {
         App main = new App();
 
+        LOGGER.info("Elf un support");
+        KingdomFactory unsupport = FactoryMaker.makeFactory(KingdomType.UN_SUPPORT);
+        if (unsupport != null) {
+            main.createKingdom(unsupport);
+            LOGGER.info(main.getArmy().getDescription());
+            LOGGER.info(main.getCastle().getDescription());
+            LOGGER.info(main.getKing().getDescription());
+        }
+
         LOGGER.info("Elf Kingdom");
         main.createKingdom(FactoryMaker.makeFactory(KingdomType.ELF));
         LOGGER.info(main.getArmy().getDescription());
